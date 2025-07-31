@@ -7,3 +7,8 @@
 - Member 4: Rolling Update Manager
 - Member 5: Screenshot Collector
 - Member 6: Report Writer
+## 🧪 Objectives
+- Deploy a Node.js app using Kubernetes
+- Mount persistent storage using PVC
+- Expose app externally via LoadBalancer
+- Implement rolling update strategy
