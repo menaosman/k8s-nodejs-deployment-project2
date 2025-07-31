@@ -87,12 +87,12 @@ minikube service nodejs-service --url
 
 | Member         | GitHub Username     | Task                                              | Output |
 |----------------|---------------------|---------------------------------------------------|--------|
-| **Mena**       | [menaosman](https://github.com/menaosman)           | Node.js Deployment YAML + Rolling update setup    | `node-deployment.yaml`, `rolling-update.yaml` |
-| **Basmala**    | [basmala352004](https://github.com/basmala352004)   | Persistent Volume Claim and binding               | `pvc.yaml`, volume tests |
-| **Marwan**     | [MarwanTamerMo](https://github.com/MarwanTamerMo)   | LoadBalancer YAML + Service connectivity check    | `loadbalancer-service.yaml`, external IP |
-| **Sarah**      | [sarahelansaryy](https://github.com/sarahelansaryy) | Liveness & Readiness Probes + Testing             | Deployment update |
+| **Seif**       | [z31ny](https://github.com/z31ny)                   | Node.js Deployment YAML + Rolling update setup    | `node-deployment.yaml`, `rolling-update.yaml` |
+| **Marwan**     | [MarwanTamerMo](https://github.com/MarwanTamerMo)   | PVC creation and binding                          | `pvc.yaml`, volume tests |
+| **Sarah**      | [sarahelansaryy](https://github.com/sarahelansaryy) | LoadBalancer YAML + Service connectivity check    | `loadbalancer-service.yaml`, external IP |
+| **Basmala**    | [basmala352004](https://github.com/basmala352004)   | Liveness & Readiness Probes + Testing             | Deployment probes |
 | **Menna**      | [mennaazazyy](https://github.com/mennaazazyy)       | Screenshot documentation & visuals                | `/screenshots` |
-| **Seif**       | [z31ny](https://github.com/z31ny)                   | README formatting + GitHub setup                  | `README.md`, repo structure |
+| **Mena**       | [menaosman](https://github.com/menaosman)           | Final README formatting and team coordination     | `README.md`, GitHub repo |
 
 📝 _Each member documented their process and submitted screenshots in the `/screenshots` folder._
 
