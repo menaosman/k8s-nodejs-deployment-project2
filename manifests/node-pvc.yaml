@@ -1,0 +1,12 @@
+# pvc.yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nodejs-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    # Here, I'm requesting 1 Gibibyte of storage.
+    requests:
+      storage: 1Gi
