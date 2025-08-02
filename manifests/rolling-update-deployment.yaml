@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejs-app-deployment
+  labels:
+    app: nodejs-app
+spec:
+  replicas: 2
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - name: nodejs-app
+        image: node:18-alpine
+        command: ["node"]
+        args: ["-e", "require('http').createServer((req, res) => { res.writeHead(200); res.end('Hello from Node.js on port 3000!'); }).listen(3000, '0.0.0.0'); console.log('Node.js app listening on port 3000');"]
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "64Mi"
+            cpu: "250m"
+          limits:
+            memory: "128Mi"
+            cpu: "502m"
+        volumeMounts:
+        - name: nodejs-persistent-storage
+          mountPath: /app/data
+      volumes:
+      - name: nodejs-persistent-storage
+        persistentVolumeClaim:
+          claimName: nodejs-pvc
