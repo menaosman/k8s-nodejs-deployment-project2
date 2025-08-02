@@ -44,6 +44,23 @@ This completes the Kubernetes deployment pipeline.
 - Created a LoadBalancer service with correct `targetPort` and selector.
 - Used `minikube tunnel` to expose the service.
 - Verified the IP and accessed the app using browser and `curl`.
+- Troubleshooting: LoadBalancer Service Endpoints
+
+During service setup, an issue was observed where the LoadBalancer service did not connect correctly to the running pods.  
+To resolve this, we followed these key troubleshooting steps:
+
+- Ensured that the **Minikube cluster was running** using `minikube start`.
+- Confirmed that the **deployment was applied first**, and the pods were in `Running` state.
+- Verified that the **Service type** was set to `LoadBalancer`.
+- Checked that the **targetPort** in the service matched the `containerPort` (3000) in the deployment.
+- Made sure the **selector** used in the service matched the label of the deployed pods (`app: nodejs-app`).
+- Ran `kubectl get svc` before and after starting the tunnel to check for the assigned **external IP**.
+- Used `minikube tunnel` to allow LoadBalancer IP exposure.
+- Ran `kubectl describe svc nodejs-service` to verify that **endpoints were connected** to the correct pod IPs.
+- Finally, verified connectivity with `curl <external-ip>` and accessed the app in the browser.
+
+These steps ensured the LoadBalancer correctly routed external traffic to the Node.js pods.
+
 
 ### d. Rolling Update Implementation
 
@@ -92,3 +109,4 @@ Refer to the **testing_screenshots.pdf** for:
 This project successfully implemented a production-style Kubernetes workflow, including persistent storage, external access, and zero-downtime application updates.  
 Each step was verified using appropriate `kubectl` commands, and the final application responded as expected after the update.  
 This setup is foundational to real-world DevOps practices and CI/CD pipelines.
+
