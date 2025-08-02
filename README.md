@@ -76,10 +76,10 @@ minikube service nodejs-service --url
 
 | 📸 Screenshot | Description |
 |--------------|-------------|
-| ![Deployment](screenshots/deployment.png) | Successful pod deployment |
-| ![PVC](screenshots/pvc.png) | PVC bound to pod |
-| ![Service](screenshots/service.png) | LoadBalancer service created |
-| ![Rolling Update](screenshots/rolling-update.png) | Rolling update in action |
+| ![Deployment] | Successful pod deployment |
+| ![PVC] | PVC bound to pod |
+| ![Service] | LoadBalancer service created |
+| ![Rolling Update] | Rolling update in action |
 
 ---
 
